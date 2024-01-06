@@ -1,5 +1,6 @@
 // var savebtn =; 
 var txtarea = $('#txtarea');
+var text = localStorage.getItem("text");
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -27,7 +28,8 @@ $(function () {
   });
   
   $(".saveBtn").on("click", function () {
-
+    txtarea.textContent = text;
+    localStorage.setItem("text", text);
     console.log("this is working");
   });
   
